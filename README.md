@@ -35,3 +35,45 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # next-postgresql
+
+
+[tuto ici](https://www.youtube.com/watch?v=tm70Xa6igbY)
+
+user :postgres
+pass :ma_mot_de_passe# next-from-scratch
+
+
+# Prima
+utlisation de Prisma pou acceder à la base de donnée PostgreSQL
+
+[dc prisma ](https://www.prisma.io/docs/getting-started/quickstart)
+install 
+```sh
+npm i prisma --save-dev 
+```
+
+init 
+```sh
+npx prisma init 
+```
+
+set schema
+
+```sh
+npx prisma db push 
+```
+
+manage data 
+outil sur page web pour la visualisation de la base de donnée 
+
+```sh
+npx prisma studio
+```
+
+prisma client : pour acceder aux donnée
+
+```sh
+npm i @prisma/client 
+```
+
+[best practice Prisma](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices)
