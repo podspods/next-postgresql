@@ -10,16 +10,37 @@ import FormUpdateUser from '@/components/FormUpdateUser';
 //   userId: string;
 // };
 
-export default async function Update({ params }: { params: { userId: string } }) {
-  const id: string = params.userId;
+type UpdateProps = {
+  params: {
+    id: string;
+  };
+};
+
+
+
+export default async function Update({ ...props }: UpdateProps ) {
+
+  console.log(' Update props==>', props);
+  
+
+  if (!props.params.id ) {
+    notFound();
+  }
+
+  console.log(' Update props==>', props);
+
+  const id: string = props.params.id;
 
   const user = await prisma.zuser.findFirst({
     where: { id: id }
   });
 
-  if (!user) {
+  if (!user ) {
     notFound();
   }
+  console.log('Update  findFirst params.id==>',props.params.id );
+console.log('Update  findFirst id==>',id );
+console.log('Update  findFirst user==>',user );
 
   return (
     <>
